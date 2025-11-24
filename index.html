@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <title>ERA OPHTHALMICA - Investor Page</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f9f9f9;
+      background: linear-gradient(135deg, #9ed2ad 0%, #4ba2d9 50%, #473662 100%);
       color: #473662;
       text-align: center;
       padding: 20px;
@@ -24,7 +27,7 @@
       color: #454e9c;
     }
     h2 {
-      font-size: 1.2em;
+      font-size: 1.5em;
       font-weight: normal;
       color: #4ba2d9;
       margin-bottom: 1em;
@@ -55,18 +58,67 @@
     .button:hover {
       opacity: 0.9;
     }
+    .video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px auto;
+  padding: 14px 24px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  width: 80%;
+  max-width: 320px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.button:hover {
+  transform: scale(1.02);
+}
+
   </style>
 </head>
 <body>
   <img src="logo.png" alt="ERA Logo" class="logo" />
-  <h1>ERA OPHTHALMICA</h1>
+  <h1>Era Ophthalmica</h1>
   <h2>Investors Landing Page</h2>
 
-  <iframe src="https://www.youtube.com/embed/7968LWT2G_4?autoplay=0&mute=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/7968LWT2G_4?autoplay=0&mute=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  <a href="https://eraophthalmica.com" class="button btn1" target="_blank">Visit Website</a>
-  <a href="https://docsend.com/v/rhq7d/era-med" class="button btn2" target="_blank">Download Deck</a>
-  <a href="https://www.linkedin.com/in/marco-u-morales-ophthalmology" class="button btn3" target="_blank">Marco Morales – CEO Profile</a>
+</div>
+
+<a href="https://eraophthalmica.com" class="button btn1" target="_blank">
+  <i class="fas fa-globe"></i> eraophthalmica.com
+</a>
+<a href="https://docsend.com/v/rhq7d/era-med" class="button btn2" target="_blank">
+  <i class="fas fa-file-download"></i> View Investors Deck
+</a>
+<a href="https://www.linkedin.com/in/marco-u-morales-ophthalmology" class="button btn3" target="_blank">
+  <i class="fab fa-linkedin"></i> Marco Morales – CEO Profile
+</a>
+
 </body>
 
 </html>
+
