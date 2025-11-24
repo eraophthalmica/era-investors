@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>ERA OPHTHALMICA - Investor Page</title>
   <style>
+    /*
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
@@ -16,6 +17,39 @@
       text-align: center;
       padding: 20px;
     }
+ */     
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('era-research-1.jpg') center center / cover no-repeat fixed;
+  position: relative;
+      text-align: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: inherit;
+  filter: blur(22px);
+  z-index: -1;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 960px;
+  margin: 40px auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+    .container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: auto;
+}
     .logo {
       max-width: 180px;
       margin: 20px auto;
@@ -28,59 +62,102 @@
     h2 {
       font-size: 1.5em;
       font-weight: normal;
-      color: #4ba2d9;
+      color: #454e9c;
       margin-bottom: 1em;
     }
+    /* remove any fixed vw-based heights to avoid cropping on large screens */
     iframe {
       width: 100%;
-      height: 56vw;
-      max-height: 400px;
       border: none;
       margin-bottom: 30px;
+      display: block;
     }
     .button {
-      display: block;
-      margin: 10px auto;
-      padding: 14px 24px;
-      font-size: 1em;
-      border: none;
-      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 14px auto;
+      padding: 16px 28px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border: 0;
+      border-radius: 999px; /* pill */
       text-decoration: none;
-      color: white;
-      width: 80%;
-      max-width: 300px;
-      transition: background 0.3s ease;
+      color: #fff;
+      width: 86%;
+      max-width: 360px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+      -webkit-tap-highlight-color: transparent;
     }
-    .btn1 { background-color: #56a479; }
-    .btn2 { background-color: #4ba2d9; }
-    .btn3 { background-color: #454e9c; }
+    .btn1 {
+      background: linear-gradient(180deg, #67b48b 0%, #56a479 100%);
+    }
+    .btn2 {
+      background: linear-gradient(180deg, #64c0f0 0%, #4ba2d9 100%);
+    }
+    .btn3 {
+      background: linear-gradient(180deg, #5960b2 0%, #454e9c 100%);
+    }
     .button:hover {
-      opacity: 0.9;
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.14);
+      filter: saturate(1.05);
+    }
+    .button:active {
+      transform: translateY(-1px) scale(0.995);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+    .button:focus {
+      outline: 3px solid rgba(75,162,217,0.18);
+      outline-offset: 4px;
     }
 .video-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto 30px;
   position: relative;
-  height: 0;
+  /* padding-top fallback maintains 16:9 aspect ratio without cropping */
+  padding-top: calc(9 / 16 * 100%);
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  margin-bottom: 30px;
+  background-color: #000;
 }
+
 .video-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
+  /* maintain full video inside frame without cropping */
+  object-fit: contain;
 }
+
+/* On larger screens use a fixed-size centered player so it doesn't blow up into a big square */
+@media (min-width: 900px) {
+  .video-wrapper {
+    width: 800px;
+    height: 450px;
+    padding-top: 0; /* disable padding-top fallback when using explicit height */
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 12px auto;
-  padding: 14px 24px;
-  font-size: 1em;
+  margin: 30px auto;
+  padding: 24px 24px;
+  font-size: 1.2em;
   border: none;
   border-radius: 8px;
   text-decoration: none;
@@ -101,9 +178,10 @@
   <h1>Era Ophthalmica</h1>
   <h2>Investors Landing Page</h2>
 
-  <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/7968LWT2G_4?autoplay=0&mute=0&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-wrapper">
+  <iframe src="https://www.youtube.com/embed/7968LWT2G_4?rel=0&modestbranding=1&autohide=1&showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
+
 
 <a href="https://eraophthalmica.com" class="button btn1" target="_blank">
   <i class="fas fa-globe"></i> eraophthalmica.com
